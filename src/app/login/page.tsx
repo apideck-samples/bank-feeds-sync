@@ -13,7 +13,7 @@ function LoginInner() {
   return (
     <main className="gradient-bg min-h-screen flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-2xl animate-fade-up">
-        <MacWindow title="Apideck Bank Feeds — Redirect target">
+        <MacWindow title="Apideck Bank Feeds Sync — Redirect target">
           <div className="px-8 py-10">
             <div className="flex items-center gap-2 text-[11px] text-zinc-400 mb-6">
               <Lock className="w-3 h-3" />

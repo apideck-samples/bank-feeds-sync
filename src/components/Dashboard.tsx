@@ -58,7 +58,7 @@ export default function Dashboard({
             Live — receiving transactions
           </span>
           <span className="text-[11px] text-zinc-500">
-            Apideck Bank Feeds · v2026-05
+            Apideck Bank Feeds Sync · v2026-05
           </span>
         </>
       }

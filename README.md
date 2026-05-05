@@ -1,4 +1,4 @@
-# Apideck Bank Feeds — Interactive Demo
+# Apideck Bank Feeds Sync — Interactive Demo
 
 A fully interactive walk-through of the
 [Apideck Bank Feeds API](https://developers.apideck.com/guides/bank-feeds-xero)

@@ -173,7 +173,7 @@ function Header({
         </span>
         <div className="text-left">
           <div className="text-[13px] font-semibold text-ink-900 leading-none">
-            Apideck Bank Feeds
+            Apideck Bank Feeds Sync
           </div>
           <div className="text-[10px] text-ink-900/60 leading-none mt-0.5">
             Interactive demo
@@ -190,7 +190,7 @@ function Header({
           </button>
         )}
         <a
-          href="https://github.com"
+          href="https://github.com/apideck-samples/bank-feeds-sync"
           target="_blank"
           rel="noreferrer"
           className="hidden sm:inline-flex items-center gap-1.5 text-xs text-ink-900/70 hover:text-ink-900 px-3 py-1.5 rounded-md ring-1 ring-black/10 bg-white/40 backdrop-blur"
@@ -198,7 +198,9 @@ function Header({
           <Github className="w-3.5 h-3.5" /> Source
         </a>
         <a
-          href="#"
+          href="https://developers.apideck.com/guides/bank-feeds-xero"
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md bg-ink-900 text-white hover:bg-ink-800"
         >
           <Sparkles className="w-3.5 h-3.5" /> Read the docs
