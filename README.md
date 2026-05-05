@@ -6,7 +6,7 @@ covering both halves of the product: customer onboarding (link an accounting
 platform via Vault) and continuous push (the bank shipping transactions into
 QuickBooks / Xero / Sage / FreshBooks).
 
-The demo recreates a Quicken-style "Add all your accounts" experience and
+The demo presents a desktop-style "Add all your accounts" experience and
 walks the user end-to-end through:
 
 1. Searching 14,000+ supported institutions
@@ -27,6 +27,19 @@ pnpm dev
 
 Then open <http://localhost:3000>.
 
+### Optional: prospect-branded institution
+
+For sales demos you can prepend a prospect's bank to the picker — the demo
+fetches their real name, logo, primary brand color and tagline live from their
+homepage. Copy `.env.local.example` to `.env.local` and set:
+
+```
+NEXT_PUBLIC_PROSPECT_DOMAIN=examplebank.com
+NEXT_PUBLIC_PROSPECT_NAME=Example Bank
+```
+
+`.env.local` is gitignored so prospect names stay local.
+
 ## Stack
 
 - Next.js 14 (App Router)
@@ -42,7 +55,7 @@ src/
     page.tsx                       # state machine for the 5 stages
     api/bank-feeds/[...path]/      # mock Apideck Bank Feeds API
   components/
-    AddAccounts.tsx                # Quicken-style "Add all your accounts"
+    AddAccounts.tsx                # institution picker ("Add all your accounts")
     LoginScreen.tsx                # bank login simulation
     AccountSelector.tsx            # pick which accounts to link
     IntegrationProgress.tsx        # collapsible API-call walkthrough
