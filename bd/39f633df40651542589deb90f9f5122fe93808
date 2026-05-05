@@ -1,0 +1,33 @@
+src/components/SessionStatus.tsx
+  c88cabe5135d48e3 1-88
+package.json
+  c88cabe5135d48e3 11
+src/app/page.tsx
+  c88cabe5135d48e3 12,14,44,91,132-136
+src/app/session/[token]/page.tsx
+  c88cabe5135d48e3 1-56
+src/lib/session.tsx
+  c88cabe5135d48e3 1-101
+src/app/layout.tsx
+  c88cabe5135d48e3 3,18-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "bd39f633df40651542589deb90f9f5122fe93808",
+  "prompts": {
+    "c88cabe5135d48e3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ec47d88-66b3-4349-9cbc-b93db7564130",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "GJ",
+      "messages": [],
+      "total_additions": 364,
+      "total_deletions": 107,
+      "accepted_lines": 3121,
+      "overriden_lines": 0
+    }
+  }
+}
