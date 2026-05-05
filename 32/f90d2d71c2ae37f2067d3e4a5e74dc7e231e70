@@ -1,0 +1,41 @@
+src/components/Dashboard.tsx
+  c88cabe5135d48e3 61
+src/app/login/page.tsx
+  c88cabe5135d48e3 16
+README.md
+  c88cabe5135d48e3 1
+src/app/layout.tsx
+  c88cabe5135d48e3 5
+src/app/page.tsx
+  c88cabe5135d48e3 176
+src/components/QuickBooksView.tsx
+  c88cabe5135d48e3 219
+src/components/OperatorConsole.tsx
+  c88cabe5135d48e3 84
+.gitignore
+  c88cabe5135d48e3 9
+package.json
+  c88cabe5135d48e3 2
+src/components/IntegrationProgress.tsx
+  c88cabe5135d48e3 238
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "32f90d2d71c2ae37f2067d3e4a5e74dc7e231e70",
+  "prompts": {
+    "c88cabe5135d48e3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ec47d88-66b3-4349-9cbc-b93db7564130",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "GJ",
+      "messages": [],
+      "total_additions": 2829,
+      "total_deletions": 14,
+      "accepted_lines": 2824,
+      "overriden_lines": 0
+    }
+  }
+}
