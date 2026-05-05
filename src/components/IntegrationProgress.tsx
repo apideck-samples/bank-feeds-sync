@@ -23,13 +23,22 @@ const STEP_ORDER: StepId[] = [
   "complete",
 ];
 
-const APIDECK_HEADERS = {
-  Authorization: "Bearer ${APIDECK_API_KEY}",
-  "x-apideck-app-id": "${APIDECK_APP_ID}",
-  "x-apideck-consumer-id": "demo-consumer",
-  "x-apideck-service-id": "xero",
-  "Content-Type": "application/json",
+const SERVICE_LABEL: Record<string, string> = {
+  xero: "Xero",
+  quickbooks: "QuickBooks Online",
+  sage: "Sage",
+  freshbooks: "FreshBooks",
 };
+
+function buildHeaders(service: string, consumerId: string) {
+  return {
+    Authorization: "Bearer ${APIDECK_API_KEY}",
+    "x-apideck-app-id": "${APIDECK_APP_ID}",
+    "x-apideck-consumer-id": consumerId,
+    "x-apideck-service-id": service,
+    "Content-Type": "application/json",
+  } as const;
+}
 
 function fmtDate(d: Date) {
   return d.toISOString().slice(0, 10);
@@ -39,15 +48,21 @@ export default function IntegrationProgress({
   institution,
   accounts,
   transactionsByAccount,
+  service = "xero",
+  consumerId = "demo-consumer",
   onFinished,
 }: {
   institution: Institution;
   accounts: MockAccount[];
   transactionsByAccount: Record<string, MockTransaction[]>;
+  service?: "xero" | "quickbooks" | "sage" | "freshbooks";
+  consumerId?: string;
   onFinished: (ctx: {
     bankFeedAccountIds: Record<string, string>;
   }) => void;
 }) {
+  const APIDECK_HEADERS = buildHeaders(service, consumerId);
+  const serviceName = SERVICE_LABEL[service] ?? "Xero";
   const [openStep, setOpenStep] = useState<StepId>("vault-session");
   const [stepState, setStepState] = useState<Record<StepId, StepState>>({
     "vault-session": "idle",
@@ -86,8 +101,8 @@ export default function IntegrationProgress({
         headers: {
           "content-type": "application/json",
           "x-apideck-app-id": "demo-app-id",
-          "x-apideck-consumer-id": "demo-consumer",
-          "x-apideck-service-id": "xero",
+          "x-apideck-consumer-id": consumerId,
+          "x-apideck-service-id": service,
         },
         body: body ? JSON.stringify(body) : undefined,
       });
@@ -235,7 +250,9 @@ export default function IntegrationProgress({
     : null;
 
   return (
-    <MacWindow title="Apideck Bank Feeds Sync — Xero integration">
+    <MacWindow
+      title={`Apideck Bank Feeds Sync — ${serviceName} integration`}
+    >
       <div className="px-8 py-8 max-w-3xl mx-auto">
         <div className="mb-6">
           <h1 className="text-xl font-semibold text-zinc-50">
@@ -249,7 +266,7 @@ export default function IntegrationProgress({
               rel="noreferrer"
               className="text-accent-500 hover:underline ml-1"
             >
-              Xero integration guide
+              {serviceName} integration guide
             </a>
             . Calls hit a local mock that mirrors the real request &amp;
             response shapes.
@@ -270,7 +287,7 @@ export default function IntegrationProgress({
           >
             <p className="text-sm text-zinc-300 mb-3">
               Vault sessions hand the customer a hosted link where they
-              authorize their accounting platform (Xero) without ever sharing
+              authorize their accounting platform ({serviceName}) without ever sharing
               credentials with your app.
             </p>
             <MockApiCall
@@ -292,7 +309,7 @@ export default function IntegrationProgress({
 
           <Step
             id="vault-link"
-            title="Step 2 — Customer authorizes Xero in Vault"
+            title={`Step 2 — Customer authorizes ${serviceName} in Vault`}
             state={stepState["vault-link"]}
             open={openStep === "vault-link"}
             onToggle={() =>
@@ -304,7 +321,7 @@ export default function IntegrationProgress({
           >
             <p className="text-sm text-zinc-300 mb-3">
               Redirect the customer to the session URI returned above. They
-              sign in to Xero, grant access, and Apideck redirects them back to
+              sign in to {serviceName}, grant access, and Apideck redirects them back to
               your app with an active connection.
             </p>
             <div className="font-mono text-[11px] text-zinc-300 bg-zinc-950 ring-1 ring-white/10 rounded-md px-3 py-2 break-all mb-3">
@@ -336,7 +353,7 @@ export default function IntegrationProgress({
             disabled={stepState["vault-link"] !== "done"}
           >
             <p className="text-sm text-zinc-300 mb-3">
-              Register each linked account in Xero by posting to{" "}
+              Register each linked account in {serviceName} by posting to{" "}
               <code className="text-accent-500">
                 /accounting/bank-feed-accounts
               </code>

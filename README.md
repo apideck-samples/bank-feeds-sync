@@ -40,6 +40,21 @@ NEXT_PUBLIC_PROSPECT_NAME=Example Bank
 
 `.env.local` is gitignored so prospect names stay local.
 
+### Launch from the Apideck samples page
+
+The demo can be linked or embedded from
+<https://www.apideck.com/samples/bank-feeds>. Supported query params:
+
+| Param | Effect |
+|---|---|
+| `?source=apideck-samples` | Shows a "welcome from Apideck samples" banner |
+| `?service=xero\|quickbooks\|sage\|freshbooks` | Sets the target accounting service in the integration walkthrough (headers, copy, redirect text) |
+| `?consumer_id=…` | Forwarded as `x-apideck-consumer-id` in the displayed API calls |
+| `?prospect=domain.com&prospect_name=…` | Prepends a prospect-branded institution to the picker (overrides the env var) |
+
+The demo also serves a permissive `frame-ancestors` CSP so it can be
+embedded in an iframe from `apideck.com`.
+
 ## Stack
 
 - Next.js 14 (App Router)

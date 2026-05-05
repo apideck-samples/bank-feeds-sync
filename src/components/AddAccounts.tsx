@@ -9,21 +9,37 @@ import {
   POPULAR_INSTITUTIONS,
 } from "@/lib/institutions";
 import { useDynamicInstitutions } from "@/lib/useDynamicInstitutions";
+import { LaunchParams } from "@/lib/launchParams";
 
 export default function AddAccounts({
   onPick,
   onAddManual,
   onBack,
+  launch,
 }: {
   onPick: (i: Institution) => void;
   onAddManual: () => void;
   onBack?: () => void;
+  launch?: LaunchParams;
 }) {
   const [query, setQuery] = useState("");
   const allInstitutions = useMemo(() => {
-    const prospect = getProspectInstitution();
-    return prospect ? [prospect, ...POPULAR_INSTITUTIONS] : POPULAR_INSTITUTIONS;
-  }, []);
+    // URL prospect overrides env prospect — useful for sales links like
+    // ?prospect=examplebank.com
+    const prospect = launch?.prospectDomain
+      ? {
+          id: `prospect-${launch.prospectDomain.replace(/[^a-z0-9]+/gi, "-").toLowerCase()}`,
+          name: launch.prospectName || launch.prospectDomain,
+          logoBg: "bg-zinc-700",
+          logoText: "text-white",
+          tagline: `Sign in to ${launch.prospectName || launch.prospectDomain}`,
+          dynamic: { domain: launch.prospectDomain },
+        }
+      : getProspectInstitution();
+    return prospect
+      ? [prospect, ...POPULAR_INSTITUTIONS]
+      : POPULAR_INSTITUTIONS;
+  }, [launch?.prospectDomain, launch?.prospectName]);
   const { institutions, loadingIds } = useDynamicInstitutions(allInstitutions);
   const filtered = useMemo(() => {
     if (!query.trim()) return institutions;
