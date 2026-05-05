@@ -1,0 +1,23 @@
+src/app/page.tsx
+  438ae256835e616b 217
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "71e4e19e6b83b4e1b45212c17703587951efd421",
+  "prompts": {
+    "438ae256835e616b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4e5b6b80-a3a7-42d8-8fde-628fd8add146",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "GJ",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
