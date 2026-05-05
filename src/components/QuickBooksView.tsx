@@ -216,7 +216,7 @@ export default function QuickBooksView({
                 A
               </div>
               <div className="text-[12px] leading-tight">
-                <div className="font-medium">Apideck Bank Feeds</div>
+                <div className="font-medium">Apideck Bank Feeds Sync</div>
                 <div className="text-zinc-500">Pushed via API</div>
               </div>
             </div>

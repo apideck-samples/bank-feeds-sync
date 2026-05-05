@@ -235,7 +235,7 @@ export default function IntegrationProgress({
     : null;
 
   return (
-    <MacWindow title="Apideck Bank Feeds — Xero integration">
+    <MacWindow title="Apideck Bank Feeds Sync — Xero integration">
       <div className="px-8 py-8 max-w-3xl mx-auto">
         <div className="mb-6">
           <h1 className="text-xl font-semibold text-zinc-50">

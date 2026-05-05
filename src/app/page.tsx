@@ -173,7 +173,7 @@ function Header({
         </span>
         <div className="text-left">
           <div className="text-[13px] font-semibold text-ink-900 leading-none">
-            Apideck Bank Feeds
+            Apideck Bank Feeds Sync
           </div>
           <div className="text-[10px] text-ink-900/60 leading-none mt-0.5">
             Interactive demo

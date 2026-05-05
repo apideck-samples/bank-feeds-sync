@@ -81,7 +81,7 @@ export default function OperatorConsole({ onBack }: { onBack: () => void }) {
 
   return (
     <MacWindow
-      title="Apideck Bank Feeds — Operator console"
+      title="Apideck Bank Feeds Sync — Operator console"
       footer={
         <>
           <button

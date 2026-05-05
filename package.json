@@ -1,5 +1,5 @@
 {
-  "name": "apideck-bank-feeds-demo",
+  "name": "apideck-bank-feeds-sync-demo",
   "version": "0.1.0",
   "private": true,
   "scripts": {
