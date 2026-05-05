@@ -1,0 +1,23 @@
+src/app/page.tsx
+  c88cabe5135d48e3 193,201-203
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "b377bb79165c84369d2478a9b2f90bf2360c9104",
+  "prompts": {
+    "c88cabe5135d48e3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ec47d88-66b3-4349-9cbc-b93db7564130",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "GJ",
+      "messages": [],
+      "total_additions": 4,
+      "total_deletions": 2,
+      "accepted_lines": 2818,
+      "overriden_lines": 0
+    }
+  }
+}
