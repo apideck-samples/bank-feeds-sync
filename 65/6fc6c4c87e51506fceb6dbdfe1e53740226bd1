@@ -1,0 +1,79 @@
+next.config.mjs
+  c88cabe5135d48e3 1-3
+src/app/api/apideck/[...path]/route.ts
+  c88cabe5135d48e3 1-174
+src/lib/useDynamicInstitutions.ts
+  c88cabe5135d48e3 1-81
+src/lib/mockData.ts
+  c88cabe5135d48e3 1-138
+src/components/AccountSelector.tsx
+  c88cabe5135d48e3 1-135
+src/components/MockApiCall.tsx
+  c88cabe5135d48e3 1-180
+tsconfig.json
+  c88cabe5135d48e3 1-21
+src/components/AddAccounts.tsx
+  c88cabe5135d48e3 1-195
+src/lib/text.ts
+  c88cabe5135d48e3 1-15
+src/app/login/page.tsx
+  c88cabe5135d48e3 1-85
+src/components/Dashboard.tsx
+  c88cabe5135d48e3 1-236
+src/app/page.tsx
+  c88cabe5135d48e3 272
+src/app/login/failure/page.tsx
+  c88cabe5135d48e3 1-43
+src/components/IntegrationProgress.tsx
+  c88cabe5135d48e3 1-537
+src/app/globals.css
+  c88cabe5135d48e3 1-57
+src/components/MacWindow.tsx
+  c88cabe5135d48e3 1-44
+src/app/login/success/page.tsx
+  c88cabe5135d48e3 1-40
+src/components/InstitutionLogo.tsx
+  c88cabe5135d48e3 1-55
+src/components/LoginScreen.tsx
+  c88cabe5135d48e3 1-114
+src/components/OperatorConsole.tsx
+  c88cabe5135d48e3 1-368
+src/app/api/bank-meta/route.ts
+  c88cabe5135d48e3 1-131
+tailwind.config.ts
+  c88cabe5135d48e3 1-55
+src/app/layout.tsx
+  c88cabe5135d48e3 7
+src/lib/institutions.ts
+  c88cabe5135d48e3 1-126
+src/components/QuickBooksView.tsx
+  c88cabe5135d48e3 1-485
+src/lib/operatorData.ts
+  c88cabe5135d48e3 1-171
+README.md
+  c88cabe5135d48e3 9,45
+postcss.config.mjs
+  c88cabe5135d48e3 1-3
+package.json
+  c88cabe5135d48e3 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "656fc6c4c87e51506fceb6dbdfe1e53740226bd1",
+  "prompts": {
+    "c88cabe5135d48e3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5ec47d88-66b3-4349-9cbc-b93db7564130",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "GJ",
+      "messages": [],
+      "total_additions": 3521,
+      "total_deletions": 5,
+      "accepted_lines": 3521,
+      "overriden_lines": 0
+    }
+  }
+}
