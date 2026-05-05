@@ -9,7 +9,9 @@ import Dashboard from "@/components/Dashboard";
 import OperatorConsole from "@/components/OperatorConsole";
 import QuickBooksView from "@/components/QuickBooksView";
 import LaunchedFromBanner from "@/components/LaunchedFromBanner";
+import SessionStatus from "@/components/SessionStatus";
 import { useLaunchParams } from "@/lib/launchParams";
+import { useSession } from "@/lib/session";
 import { Institution } from "@/lib/institutions";
 import {
   MockAccount,
@@ -39,6 +41,7 @@ const STAGES: Array<{ id: Stage; label: string }> = [
 
 export default function Page() {
   const launch = useLaunchParams();
+  const { session } = useSession();
   const [stage, setStage] = useState<Stage>("picker");
   const [institution, setInstitution] = useState<Institution | null>(null);
   const [allAccounts, setAllAccounts] = useState<MockAccount[]>([]);
@@ -85,6 +88,7 @@ export default function Page() {
         />
 
         <LaunchedFromBanner params={launch} />
+        <SessionStatus />
 
         <div className="animate-fade-up">
           {stage === "picker" && (
@@ -125,7 +129,11 @@ export default function Page() {
               accounts={selectedAccounts}
               transactionsByAccount={transactionsByAccount}
               service={launch.service ?? "xero"}
-              consumerId={launch.consumerId ?? `consumer_${institution.id}`}
+              consumerId={
+                session?.consumerId ??
+                launch.consumerId ??
+                `consumer_${institution.id}`
+              }
               onFinished={(_ctx) => setStage("dashboard")}
             />
           )}

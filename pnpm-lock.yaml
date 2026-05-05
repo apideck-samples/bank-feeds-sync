@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@apideck/vault-js':
+        specifier: ^1.8.0
+        version: 1.8.0
       lucide-react:
         specifier: ^0.460.0
         version: 0.460.0(react@18.3.1)
@@ -48,6 +51,10 @@ packages:
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+
+  '@apideck/vault-js@1.8.0':
+    resolution: {integrity: sha512-3qP++KcfMTWvsdDfCU2TOn2hh4Qbioa7vUFCr8+AuDyJ8Evk+xJeSOOEqNEH7GN7y9oHGedadbYnn3JZs854PA==}
+    engines: {node: '>=12'}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -559,6 +566,8 @@ packages:
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
+
+  '@apideck/vault-js@1.8.0': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
