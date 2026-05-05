@@ -214,7 +214,7 @@ function Header({
           <Github className="w-3.5 h-3.5" /> Source
         </a>
         <a
-          href="https://developers.apideck.com/guides/bank-feeds-xero"
+          href="https://developers.apideck.com/guides/bank-feeds"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md bg-ink-900 text-white hover:bg-ink-800"
